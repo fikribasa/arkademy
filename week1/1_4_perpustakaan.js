@@ -1,37 +1,39 @@
-let arrayBuku =[
-    {
-        name : 'Harry Potter',
-        status : 'Dapat dipinjam - Available'
-    },
-    {
-        name : 'John Wick',
-        status : 'Tidak dapat dipinjam - Not Available'
-    },
-    {
-        name : 'Orang Orang Biasa',
-        status : 'Tidak dapat dipinjam - Not Available'
-    },
-    {
-        name : 'Muslim Produktif',
-        status : 'Dapat dipinjam - Available'
-    }
-];
+let daftarBuku =[
+    {name : 'Harry Potter', status : 'Tersedia'},
+    {name : 'John Wick', status : 'Tidak Tersedia'},
+    {name : 'Orang Orang Biasa',status : 'Tidak Tersedia'},
+    {name : 'Muslim Produktif',status : 'Tersedia'},
+    {name : 'Atomic Habit',status:'Tersedia'}
+]
+let bukuIndex =[];
+function pinjam(judul){
+    for (let i=0; i<daftarBuku.length;i++){
+        if (daftarBuku[i].name==judul) {
+            bukuIndex.push(daftarBuku[i].status)
+        }
+    } 
+    return ('Status buku '+judul+' '+bukuIndex);
+    
+}
 
-function cekBuku(judul) {                            
-    let arrIndex = arrayBuku.map(function(x) {return x.name;}).indexOf(judul);
-    let indexStatus = arrayBuku[arrIndex];
-    return indexStatus.status;
-    }
+function ketersediaan(comm){
+    for (let i=0;i<daftarBuku.length;i++){
+        if (daftarBuku[i].status===comm){
+            bukuIndex.push(daftarBuku[i].name)
+        }
+    } return ('Buku yang Tersedia : '+bukuIndex);
+}
 
-console.log(cekBuku('Orang Orang Biasa'));
 
+//console.log(pinjam('John Wick'));
+// console.log(ketersediaan('Tersedia'));
 
-// var elementPos = array.map(function(x) {return x.id; }).indexOf(idYourAreLookingFor);
-// var objectFound = array[elementPos];
+// function cekBuku(judul) {                            
+//     let arrIndex = daftarBuku.map(function(x) {return x.name;}).indexOf(judul);
+//     let indexStatus = daftarBuku[arrIndex];
+//     return indexStatus.status;
+//     }
 
-// function cekBuku(judul) {
-//     for (var i=0; i<=arrayBuku.length ;i+=1 ) judul == arrayBuku.name;
-//     return arrayBuku.status;
-// }
+// console.log(cekBuku('Orang Orang Biasa'));
 
 

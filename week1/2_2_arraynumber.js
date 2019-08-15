@@ -1,15 +1,15 @@
 function jumlahSatu(num){
    
-    newNum = num.reduce((a,b)=>a+b);
+    newNum = num.reduce((a,b)=>a+b); //penjumlahan pertama, dijadikan 1 array objek
     let arr=newNum;
     
-    while (newNum >=9){
+    while (newNum >10){
         console.log(arr);
-        arr = [Array.from(String(newNum), Number)];
+        arr = Array.from(String(newNum), Number);  // merubah tiap digit newnum ke string, kemudian jadi number lagi
         console.log(arr);
         newNum = arr.reduce((a,b)=>a+b);
         arr=newNum;
-    }console.log('Hasil Akhir = ' ); return arr;
+    }; return arr;
     
 }
 console.log(jumlahSatu([123,9,27]));

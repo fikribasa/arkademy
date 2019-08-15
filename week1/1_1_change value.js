@@ -39,7 +39,8 @@ let arrayObjek =[
 
 function editObjek(){
     for(let i=0;i<arrayObjek.length;i++){
-        if(arrayObjek[i].name==='Tatas'){
+        if([arrayObjek[i]].name==='Tatas'){
+            
             arrayObjek[i].city='Jakarta';
             arrayObjek[i].status='Menikah';
         } else if(arrayObjek[i].name==='Pratama'){
@@ -51,4 +52,3 @@ function editObjek(){
 
 console.log(editObjek())
 
-//kurang spread operator
